@@ -35,7 +35,7 @@
 
 .search_bar_input{
   height:100%;
-  width:65%;
+  width:60%;
   /* background:yellowgreen; */
   padding:0 35rpx;
 }
