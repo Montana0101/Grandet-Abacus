@@ -35,9 +35,9 @@
                 </view>
               </view>
               <view class="list_item_content_footer">
-                <text>¥ {{item.price}}</text>
-                <text>{{item.store}}</text>
-                <text>{{item.source}}</text>
+                <view>¥ {{item.price}}</view>
+                <view>{{item.store}}</view>
+                <view>{{item.source}}</view>
               </view>
             </view>
           </view>

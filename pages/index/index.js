@@ -55,7 +55,7 @@ Page({
   },
   copy_url(e){
     wx.setClipboardData({
-      data: e.currentTarget.dataset.url
+      data: e.currentTarget.dataset.url,
       })
   },
   input_change(e) {
@@ -63,6 +63,22 @@ Page({
       inputValue: e.detail.value
     })
   },
+
+  stringlen(str){
+      let len = 0
+        for (var i=0; i<str.length; i++) { 
+     var c = str.charCodeAt(i); 
+    //单字节加1 
+     if ((c >= 0x0001 && c <= 0x007e) || (0xff60<=c && c<=0xff9f)) { 
+       len++; 
+     } 
+     else { 
+      len+=2; 
+     } 
+    } 
+    return len;
+  },
+
   search_books() {
     wx.showLoading({
       title: '全网搜索中',
@@ -74,10 +90,10 @@ Page({
           res.data = res.data.splice(0, 99)
         }
         res.data.map(item=>{
-          if(item.title.length>8){
+          if(this.stringlen(item.title).length>16){
             item.title = item.title.slice(0,7)
           }
-          if(item.author.length>7){
+          if(this.stringlen(item.author).length>14){
             item.author = item.author.slice(0,6)
           }
           if(item.source=='孔夫子旧书网'){
