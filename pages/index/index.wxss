@@ -30,7 +30,7 @@
   height:80rpx;
   box-sizing: border-box;
   padding:0rpx 0rpx;
-  background:rgba(222,222,222,1)
+  background:rgba(222,222,222,0.3)
 }
 
 .search_bar_input{
@@ -62,16 +62,17 @@
 
 /* 列表区域 */
 .list{
-  margin-top: 50rpx;
+  margin-top: 30rpx;
 }
 
 .list_item{
   height:150rpx;
   width:100%;
-  border:1px solid rgba(222,222,222, 1);
+  border:1rpx solid rgba(222,222,222, 0.7);
   padding:20rpx 0rpx;
   box-sizing: border-box;
   display: flex;
+  margin-bottom: 20rpx;
 }
 
 .list_item image{
@@ -102,7 +103,7 @@
 }
 
 .list_item_content_header>view:first-child{
-  font-size:32rpx;
+  font-size:28rpx;
   margin-right: 20rpx;
 }
 
@@ -113,5 +114,5 @@
 
 .list_item_content_footer>text{
   margin-right: 20rpx;
-  font-size:28rpx
+  font-size:26rpx
 }

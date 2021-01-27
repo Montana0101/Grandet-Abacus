@@ -53,9 +53,10 @@ Page({
       hasUserInfo: true
     })
   },
-  jump_detail(e){
-    console.log('e 的撒大',e.currentTarget.dataset.url)
-    
+  copy_url(e){
+    wx.setClipboardData({
+      data: e.currentTarget.dataset.url
+      })
   },
   input_change(e) {
     this.setData({
@@ -73,9 +74,16 @@ Page({
           res.data = res.data.splice(0, 99)
         }
         res.data.map(item=>{
-          // if(item.name.length>8){
-          //   item.name = item.name.slice(0,7)
-          // }
+          if(item.title.length>8){
+            item.title = item.title.slice(0,7)
+          }
+          if(item.author.length>7){
+            item.author = item.author.slice(0,6)
+          }
+          if(item.source=='孔夫子旧书网'){
+            item.source='孔夫子网'
+          }
+   
           console.log('item is',item)
         })
         console.log('成功调用', res.data)

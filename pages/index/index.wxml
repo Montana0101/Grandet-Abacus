@@ -17,19 +17,18 @@
     </view>
 
     <view style="width:100%;font-size:28rpx;color:rgba(0,0,0,0.7);height:60rpx;display:flex;justify-content:center;margin-top:20rpx">
-         搜全网最便宜的书
+         搜全网最便宜的书(点击搜索结果复制网址)
     </view>
-    
+
     <!-- 列表 -->
     <view class='list'>
       <block wx:for="{{list}}" wx:key="index" wx:for-item="item">
-          <view class='list_item' bindtap="jump_detail" data-url="{{item.url}}">
+          <view class='list_item' bindtap="copy_url" data-url="{{item.url}}">
             <image src="{{item.img}}"/>
-            <!-- {{item.title}} -->
             <view class="list_item_content">
               <view class="list_item_content_header">
                 <view>
-                  {{item.name}}
+                  {{item.title}}
                 </view>
                 <view>
                   {{item.author}}
