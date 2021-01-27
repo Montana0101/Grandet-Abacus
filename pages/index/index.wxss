@@ -1,0 +1,117 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.main {
+  margin-top: 50px;
+  /* background:red; */
+  height: 100%;
+  width:80%;
+}
+
+.search_bar{
+  display: flex;
+  /* background:yellowgreen; */
+  align-items: center;
+  height:80rpx;
+  box-sizing: border-box;
+  padding:0rpx 0rpx;
+  background:rgba(222,222,222,1)
+}
+
+.search_bar_input{
+  height:100%;
+  width:65%;
+  /* background:yellowgreen; */
+  padding:0 35rpx;
+}
+
+.search_bar_input>input{
+  height:100%;
+  /* border:1px solid red; */
+  font-size:32rpx;
+
+}
+
+.search_bar>button{
+  flex:1;
+  font-size:28rpx;
+  height:100%;
+  border: none;
+  background:#1890ff;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0rpx;
+}
+
+/* 列表区域 */
+.list{
+  margin-top: 50rpx;
+}
+
+.list_item{
+  height:150rpx;
+  width:100%;
+  border:1px solid rgba(222,222,222, 1);
+  padding:20rpx 0rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.list_item image{
+  height:110rpx;
+  width:110rpx;
+}
+
+.list_item_content{
+  /* background:yellowgreen; */
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size:28rpx;
+  padding-left: 30rpx;
+  overflow: hidden;
+}
+
+.list_item_content_header{
+  display: flex;
+  font-size:30rpx;
+  align-items: center;
+}
+
+.list_item_content_header view{
+  display: flex;
+  align-items: center;
+}
+
+.list_item_content_header>view:first-child{
+  font-size:32rpx;
+  margin-right: 20rpx;
+}
+
+.list_item_content_header>view:last-child{
+  color:rgba(0,0,0,0.7);
+  font-size: 26rpx;
+}
+
+.list_item_content_footer>text{
+  margin-right: 20rpx;
+  font-size:28rpx
+}

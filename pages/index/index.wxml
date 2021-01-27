@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="main">
+    <!-- <text class="user-motto">{{motto}}</text> -->
+    <view class='search_bar'>
+      <view class='search_bar_input'>
+        <input class="weui-input" placeholder="请输入书名或者ISBN号" bindinput="input_change"/>
+      </view>
+      <button bindtap="search_books">搜索</button>
+    </view>
+
+    <view style="width:100%;font-size:28rpx;color:rgba(0,0,0,0.7);height:60rpx;display:flex;justify-content:center;margin-top:20rpx">
+         搜全网最便宜的书
+    </view>
+    
+    <!-- 列表 -->
+    <view class='list'>
+      <block wx:for="{{list}}" wx:key="index" wx:for-item="item">
+          <view class='list_item' bindtap="jump_detail" data-url="{{item.url}}">
+            <image src="{{item.img}}"/>
+            <!-- {{item.title}} -->
+            <view class="list_item_content">
+              <view class="list_item_content_header">
+                <view>
+                  {{item.name}}
+                </view>
+                <view>
+                  {{item.author}}
+                </view>
+              </view>
+              <view class="list_item_content_footer">
+                <text>¥ {{item.price}}</text>
+                <text>{{item.store}}</text>
+                <text>{{item.source}}</text>
+              </view>
+            </view>
+          </view>
+      </block>
+    </view>
+  </view>
+</view>
